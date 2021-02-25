@@ -5,7 +5,7 @@ import {
     useHistory
 } from "react-router-dom";
 import { Container, Form, Col, Button } from 'react-bootstrap'
-import './admin.css';
+// import './admin.css';
 
 
 

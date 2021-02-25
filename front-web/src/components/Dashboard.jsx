@@ -4,7 +4,8 @@ import { useGlobalState, useGlobalStateUpdate } from "./../context/globalContext
 import {
     useHistory
 } from "react-router-dom";
-import LogoutButton from "./logoutButton";
+import LogoutButton from "./logout.";
+import './Dashboard.css'
 
 function Dashboard() {
 
@@ -13,24 +14,29 @@ function Dashboard() {
     const setGlobalState = useGlobalStateUpdate();
 
     let history = useHistory()
-    
+
 
     return (
+        
         <>
+        <div className="main">
             {/* <LogoutButton />            */}
-             <h1>Dashboard</h1>
+            <h1>Dashboard</h1>
             <div className="row1">
-               
-            {globalState.user ?
-                <div>
-                    <h2>{globalState.user.name}</h2>
-                </div> : null}
+
+                {globalState.user ?
+                    <div>
+                        <h2>{globalState.user.name}</h2>
+                    </div> : null}
             </div>
 
 
             {'===>' + JSON.stringify(globalState)}
 
+            </div>
+
         </>
+        
     )
 }
 

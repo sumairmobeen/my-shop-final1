@@ -11,8 +11,8 @@ import {
   Link, Redirect
 } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
-import AdminDashboard from "./components/AdminDashboard";
-import LogoutButton from './components/logoutButton';
+import AdminDashboard from "./components/adminDashboard";
+import LogoutButton from './components/logout.';
 import { Navbar, Form, FormControl, Nav, Button } from 'react-bootstrap';
 import { useGlobalState } from './context/globalContext'
 function App() {
@@ -22,11 +22,11 @@ function App() {
     <>
       <Router>
         <nav>
-          <Navbar bg="dark" variant="dark">
+          <Navbar bg="yellow" variant="red" style={{height: '50px'}}>
             {(globalState.loginStatus === true) ?
               <>
-                <Nav className="mr-auto">
-                  <Nav.Link href="/"><Link to="/">Dashboard</Link></Nav.Link>
+                <Nav className="mr-auto text-white">
+                  <Nav.Link href="/" ><Link to="/">Dashboard</Link></Nav.Link>
                   <Nav.Link href="/"><Link to="/profile">profile</Link></Nav.Link>
                   {/* <Nav.Link href="/"><Link to="/"><LogoutButton /></Link></Nav.Link> */}
                 </Nav>
@@ -39,9 +39,9 @@ function App() {
               :
               <>
                 <Nav className="mr-auto">
-                  <Nav.Link href="/"><Link to="/">Home</Link></Nav.Link>
-                  <Nav.Link href="/login"><Link to="/login">Login</Link></Nav.Link>
-                  <Nav.Link href="/signup"><Link to="/signup">Signup</Link></Nav.Link>
+                  <Nav.Link href="/"><Link to="/" className="text-white">Home</Link></Nav.Link>
+                  <Nav.Link href="/login"><Link to="/login" className="text-white">Login</Link></Nav.Link>
+                  <Nav.Link href="/signup"><Link to="/signup" className="text-white">Signup</Link></Nav.Link>
                 </Nav>
               </>
             }
@@ -95,7 +95,7 @@ function App() {
                 <AdminDashboard />
               </Route>
               <Route path="/home">
-                <Logout />
+                <logout / >
               </Route>
 
               <Route path="*">

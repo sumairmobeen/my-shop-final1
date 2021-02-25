@@ -28,6 +28,7 @@
     "mongoose": "^5.11.17",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.7",
-    "react-bootstrap": "^1.5.0"
+    "react-bootstrap": "^1.5.0",
+    "react-shopping-cart": "^1.9.5"
   }
 }
